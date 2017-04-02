@@ -9,21 +9,28 @@ import { FacebookLoginComponent } from './facebook-login/facebook-login.componen
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { AuthService } from './auth.service'
 import {UserService } from './user.service'
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { TweedleChartComponent } from './tweedle-chart/tweedle-chart.component';
+import { TweedlesComponent } from './tweedles/tweedles.component';
+import { TweedleService } from './tweedle.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         FacebookLoginComponent,
         LoadingSpinnerComponent,
-        LoadingSpinnerComponent
+        LoadingSpinnerComponent,
+        TweedleChartComponent,
+        TweedlesComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        JsonpModule
+        JsonpModule,
+        ChartsModule
     ],
-    providers: [FacebookService, AuthService, UserService],
+    providers: [FacebookService, AuthService, UserService, TweedleService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
