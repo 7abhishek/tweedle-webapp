@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="row appHeading">
+  <div class="col-lg-12 col-md-12">
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h1 class="display-3">{{title}}</h1>
+              <p class="lead">Real Time Tweets Analysis by Muddu Koli Aishwarya</p>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+    <div class="row" *ngIf="!isUserLoggedIn">
+        <div class="col-lg-4 col-md-4 offset-md-4 offset-lg-4">
+            <app-facebook-login></app-facebook-login>
+        </div>
+    </div>
+    <div class="row" *ngIf="isUserLoggedIn">
+        Hello awesome {{userName}}!
+        <img src="{{userPicture}}" alt="..." class="img-thumbnail">
+    </div>
+</div>
