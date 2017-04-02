@@ -1,0 +1,24 @@
+<div class="row"> Your Tweedles </div>
+<div class="row">
+<div class="col-md-3 col-lg-2" *ngFor="let tweedle of tweedles">
+    <div class="card">
+        <h3 class="card-header">{{tweedle.name}}</h3>
+        <div class="card-block">
+            <h4 class="card-title">{{tweedle.trackTerms}}</h4>
+            <p class="card-text"></p>
+            <button  class="btn btn-info">start</button>
+            <button  class="btn btn-outline-success">view</button>
+        </div>
+    </div>
+</div>
+    <div class="col-md-3">
+        <div class="card">
+            <h3 class="card-header"></h3>
+            <div class="card-block">
+                <h4 class="card-title"><span class="glyphicon glyphicon-plus"></span></h4>
+                <p class="card-text"></p>
+                <button class="btn btn-warning">+ new</button>
+            </div>
+        </div>
+    </div>
+</div>
