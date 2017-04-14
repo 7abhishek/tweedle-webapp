@@ -1,3 +1,12 @@
 <p>
-  tweedle-chart works!
+  tweedle-chart works! here goes the chart....
 </p>
+<div style="display: block" class="TweedleChart">
+    <canvas baseChart
+            [data]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [chartType]="chartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+</div>

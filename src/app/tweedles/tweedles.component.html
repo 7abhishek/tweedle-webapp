@@ -1,23 +1,19 @@
 <div class="row"> Your Tweedles </div>
 <div class="row">
-<div class="col-md-3 col-lg-2" *ngFor="let tweedle of tweedles">
+<div class="col-md-3 col-lg-3 portfolio-item " *ngFor="let tweedle of tweedles">
     <div class="card">
-        <h3 class="card-header">{{tweedle.name}}</h3>
+        <div class="card-header"><span class="tweedle-title">{{tweedle.tweedle}}</span></div>
         <div class="card-block">
             <h4 class="card-title">{{tweedle.trackTerms}}</h4>
             <p class="card-text"></p>
-            <button  class="btn btn-info">start</button>
-            <button  class="btn btn-outline-success">view</button>
+            <button  class="btn btn-success" (click)="setTweedle(tweedle)" routerLink="/tweedle">view</button>
         </div>
     </div>
 </div>
     <div class="col-md-3">
-        <div class="card">
-            <h3 class="card-header"></h3>
+        <div class="card addNewTweedle">
             <div class="card-block">
-                <h4 class="card-title"><span class="glyphicon glyphicon-plus"></span></h4>
-                <p class="card-text"></p>
-                <button class="btn btn-warning">+ new</button>
+                <button class="btn btn-warning btn-lg btn-block"><span class="glyphicon glyphicon-plus"></span></button>
             </div>
         </div>
     </div>

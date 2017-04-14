@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class UserService {
 
-  tweedleUrl = "http://li71-25.members.linode.com:9000";
+  tweedleUrl = "http://localhost:9000";
 
   constructor (private http: Http) {}
 

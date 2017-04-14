@@ -13,6 +13,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TweedleChartComponent } from './tweedle-chart/tweedle-chart.component';
 import { TweedlesComponent } from './tweedles/tweedles.component';
 import { TweedleService } from './tweedle.service';
+import { AboutComponent } from './about/about.component';
+import { routes } from './app.router';
 
 @NgModule({
     declarations: [
@@ -21,14 +23,16 @@ import { TweedleService } from './tweedle.service';
         LoadingSpinnerComponent,
         LoadingSpinnerComponent,
         TweedleChartComponent,
-        TweedlesComponent
+        TweedlesComponent,
+        AboutComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         JsonpModule,
-        ChartsModule
+        ChartsModule,
+        routes
     ],
     providers: [FacebookService, AuthService, UserService, TweedleService],
     bootstrap: [AppComponent]

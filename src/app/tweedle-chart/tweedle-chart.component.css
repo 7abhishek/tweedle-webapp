@@ -1,0 +1,9 @@
+.TweedleChart{
+    height:50%;
+    width: 100%;
+}
+
+canvas {
+    width: 700px;
+    height: 800px;
+}
