@@ -15,6 +15,7 @@ import { TweedlesComponent } from './tweedles/tweedles.component';
 import { TweedleService } from './tweedle.service';
 import { AboutComponent } from './about/about.component';
 import { routes } from './app.router';
+import { CustomloaderComponent } from './customloader/customloader.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { routes } from './app.router';
         LoadingSpinnerComponent,
         TweedleChartComponent,
         TweedlesComponent,
-        AboutComponent
+        AboutComponent,
+        CustomloaderComponent
     ],
     imports: [
         BrowserModule,

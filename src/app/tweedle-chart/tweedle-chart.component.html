@@ -1,8 +1,10 @@
 <p>
   tweedle-chart works! here goes the chart....
 </p>
-<div style="display: block" class="TweedleChart">
-    <canvas baseChart
+<div class="TweedleChart">
+    <app-customloader *ngIf="!dataFlowing"></app-customloader>
+    <canvas *ngIf="dataFlowing"
+            baseChart
             [data]="chartData"
             [labels]="chartLabels"
             [options]="chartOptions"
@@ -10,3 +12,4 @@
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
 </div>
+

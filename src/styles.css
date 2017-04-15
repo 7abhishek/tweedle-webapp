@@ -4,3 +4,8 @@
 @import "assets/font-awesome/css/font-awesome.css";
 @import "assets/cyborg-theme.css";
 @import "../node_modules/reveal/index.css";
+@import "assets/reveal.js/css/reveal.css";
+
+body{
+    background-color: rgba(245, 245, 245,1.0);
+}

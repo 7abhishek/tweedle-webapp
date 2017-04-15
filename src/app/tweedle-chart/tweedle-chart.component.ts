@@ -13,13 +13,15 @@ export class TweedleChartComponent implements OnInit {
   sentiments:Array<string> = [];
   public chartLabels:string[] = ['Positive','Neutral','Negative'];
   public pieChartData:number[] = [1, 1, 1];
-  public chartType:string = 'bar';
+  public chartType:string = 'pie';
   public chartOptions = {
     scaleShowVerticalLines: false,
-    responsive: true
+    responsive: true,
+    maintainAspectRatio: false
   };
+  dataFlowing:boolean = false;
 
-  public chartData:Array<any> = [[0,1,2]];
+  public chartData:Array<any> = [0,0,0];
 
   constructor(private tweedleService:TweedleService) { }
 
@@ -35,10 +37,8 @@ export class TweedleChartComponent implements OnInit {
     console.log(e);
   }
 
-  updatePieChart(sentiment){
-    this.pieChartData[0] =  sentiment["positive"];
-    this.pieChartData[1] =  sentiment["neutral"];
-    this.pieChartData[2] =  sentiment["negative"];
+  updatePieChart(sentiment) {
+    this.dataFlowing = true;
     console.log("updatePieChart ",this.pieChartData);
     let barChartData = [sentiment["positive"],sentiment["neutral"],sentiment["negative"]];
     this.chartData = barChartData;
