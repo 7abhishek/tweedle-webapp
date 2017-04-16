@@ -16,6 +16,7 @@ import { TweedleService } from './tweedle.service';
 import { AboutComponent } from './about/about.component';
 import { routes } from './app.router';
 import { CustomloaderComponent } from './customloader/customloader.component';
+import { WindowRefService } from './window-ref.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,7 @@ import { CustomloaderComponent } from './customloader/customloader.component';
         ChartsModule,
         routes
     ],
-    providers: [FacebookService, AuthService, UserService, TweedleService],
+    providers: [FacebookService, AuthService, UserService, TweedleService, WindowRefService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

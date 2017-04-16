@@ -1,4 +1,77 @@
 .About{
     height: 100%;
     width: 100%;
+    padding-top: 35%;
+}
+
+.box{
+    margin-top: 5%;
+    display: block;
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+    background-color: #6C7A89;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    color: White;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+#title {
+    padding: 0;
+}
+
+#title .try {
+    font-size: 64px;
+    position: absolute;
+    top: -0.5em;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+
+#title h1 {
+    font-size: 190px;
+
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
+
+#title .footnote {
+    font-size: 32px;
+}
+
+a{
+    color: #89C4F4;
+
+}
+
+#big {
+    width: 600px;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+}
+
+#big b {
+    display: block;
+    font-size: 70px;
+    line-height: 250px;
+}
+
+#big .thoughts {
+    font-size: 90px;
+    line-height: 150px;
 }
