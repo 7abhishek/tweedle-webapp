@@ -15,11 +15,11 @@ export class TweedleService {
   }
 
 
-  saveTweedle(tweelde:TweedleRequest) {
-    console.log("save Tweedle ", tweelde);
+  saveTweedle(tweedle:TweedleRequest) {
+    console.log("save Tweedle ", tweedle);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.tweedleUrl+"tweedle", { tweelde }, options)
+    return this.http.post(this.tweedleUrl+"tweedle",  tweedle, options)
         .map((data) => {console.log("saveTweedle ", data);})
         .catch(this.handleError);
   }
