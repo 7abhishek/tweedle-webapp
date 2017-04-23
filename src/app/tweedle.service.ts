@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http, Headers, RequestOptions, Response } from '@angular/http'
 import * as Rx from 'rxjs/Rx';
 import {TweedleRequest} from './models/tweedleRequest';
 
@@ -8,14 +8,38 @@ export class TweedleService {
 
   private subject: Rx.Subject<MessageEvent>;
   private url:string;
+  private tweedleUrl:string = "http://74.207.229.25:9000/";
   private currentTweedle:TweedleRequest;
   constructor(private http:Http) {
-    this.url="ws://localhost:9000/test";
+    this.url="ws://74.207.229.25:9000/test";
   }
 
 
+  saveTweedle(tweelde:TweedleRequest) {
+    console.log("save Tweedle ", tweelde);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.tweedleUrl+"tweedle", { tweelde }, options)
+        .map((data) => {console.log("saveTweedle ", data);})
+        .catch(this.handleError);
+  }
+
+  private handleError (error: Response | any) {
+    // In a real world app, we might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Promise.reject(errMsg);
+  }
+
   getTweedles(userId){
-    return this.http.get("http://localhost:9000/tweedles/"+userId).map((data) => data.json());
+    return this.http.get(this.tweedleUrl+"tweedles/"+userId).map((data) => data.json());
   }
 
   getWsInstance() {
@@ -77,11 +101,30 @@ export class TweedleService {
   return Rx.Subject.create(observer, observable);
 }
 
+
+  startStreamingAndAnalysis(tweedle){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.tweedleUrl+"start",  tweedle, options)
+        .map((data) => {console.log("saveTweedle ", data);})
+        .catch(this.handleError);
+  }
+
+
   setCurrentTweedle(tweedle){
+    console.log("setting current tweedle ", tweedle);
     this.currentTweedle = tweedle;
   }
 
   getCurrentTweedle(){
     return this.currentTweedle;
+  }
+
+  stopTweedle(tweedle){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.tweedleUrl+"stop",  tweedle , options)
+        .map((data) => {console.log("stopTweedle ", data);})
+        .catch(this.handleError);
   }
 }

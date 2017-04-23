@@ -5,7 +5,7 @@ import {User} from './models/user';
 @Injectable()
 export class AuthService {
   isUserLoggedIn:boolean;
-  userId:String;
+  userId:string;
   constructor(private fb:FacebookService, private userservice:UserService) {
     let fbParams:FacebookInitParams = {
       appId: '1340796362646203',

@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { routes } from './app.router';
 import { CustomloaderComponent } from './customloader/customloader.component';
 import { WindowRefService } from './window-ref.service';
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { WindowRefService } from './window-ref.service';
         HttpModule,
         JsonpModule,
         ChartsModule,
-        routes
+        routes,
+        Ng2Bs3ModalModule
     ],
     providers: [FacebookService, AuthService, UserService, TweedleService, WindowRefService],
     bootstrap: [AppComponent]

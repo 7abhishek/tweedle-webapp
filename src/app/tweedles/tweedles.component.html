@@ -1,22 +1,53 @@
 <div class="container">
-<div class="row"> Your Tweedles </div>
 <div class="row">
-<div class="col-md-3 col-lg-3 portfolio-item " *ngFor="let tweedle of tweedles">
-    <div class="card">
-        <div class="card-header"><span class="tweedle-title">{{tweedle.tweedle}}</span></div>
+    <div class="col-lg-offset-4 col-md-offset-4">
+        <h1>
+              <span class="headerBadge badge badge-success"> Your Tweedles</span>
+        </h1>
+    </div>
+
+</div>
+<div class="row">
+<div class="col-md-3 col-lg-3 portfolio-item " *ngFor="let tweedlE of tweedles">
+    <div class="card tweedle">
+        <div class="card-header"><span class="tweedle-title">{{tweedlE.tweedle}}</span></div>
         <div class="card-block">
-            <h4 class="card-title">{{tweedle.trackTerms}}</h4>
+            <h4 class="card-title">{{tweedlE.trackTerms}}</h4>
             <p class="card-text"></p>
-            <button  class="btn btn-success" (click)="setTweedle(tweedle)" routerLink="/tweedle">view</button>
+            <button  class="btn btn-success" (click)="setTweedle(tweedlE)" routerLink="/tweedle">view</button>
         </div>
     </div>
 </div>
     <div class="col-md-3">
         <div class="card addNewTweedle">
-            <div class="card-block">
-                <button class="btn btn-warning btn-lg btn-block"><span class="glyphicon glyphicon-plus"></span></button>
+            <div class="card-block newTweedle">
+                    <button class="btn btn-info" (click)="modal.open()"><span class="glyphicon glyphicon-plus"></span> New</button>
             </div>
         </div>
     </div>
 </div>
 </div>
+
+<modal [animation]="animation" [keyboard]="keyboard" [backdrop]="backdrop" (onClose)="closed()" (onDismiss)="dismissed()"
+       (onOpen)="opened()" [cssClass]="cssClass" #modal>
+    <modal-header [show-close]="true">
+        <h4 class="modal-title">I'm a modal!</h4>
+    </modal-header>
+    <modal-body>
+        <div class="form-group">
+            <label for="tweedle">tweedle</label>
+            <input type="text" class="form-control" required [(ngModel)]="newTweedle"  name="tweedle" id="tweedle">
+        </div>
+        <div class="form-group">
+            <label for="trackTerms">track terms</label>
+            <input type="text" class="form-control" required [(ngModel)]="newTrackTerms" name="trackTerms" id="trackTerms">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" [(ngModel)]="newNotify" value="">Notification</label>
+        </div>
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-success" (click)="modal.close()">Save</button>
+        <button type="button" class="btn" (click)="modal.dismiss()">Dismiss</button>
+    </modal-footer>
+</modal>

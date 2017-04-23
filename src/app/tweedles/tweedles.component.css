@@ -5,4 +5,21 @@
 
 .addNewTweedle{
     border: 1px dashed grey;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.tweedle{
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid lightblue;
+}
+
+.headerBadge{
+    font-size: 36px;
+}
+
+.newTweedle{
+    text-align: center;
 }

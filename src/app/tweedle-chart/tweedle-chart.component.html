@@ -1,15 +1,56 @@
-<p>
-  tweedle-chart works! here goes the chart....
-</p>
+<div class="container">
+    <div class="row tweedleCenter">
+        <h1>
+            {{tweedle.tweedle}}
+        </h1>
+    </div>
+
+</div>
 <div class="TweedleChart">
-    <app-customloader *ngIf="!dataFlowing"></app-customloader>
-    <canvas *ngIf="dataFlowing"
-            baseChart
-            [data]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [chartType]="chartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <div class="row tweedleCenter">
+                <button class="btn btn-info btn-lg" (click)="requestAnalysis()">Analyze</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="row tweedleCenter">
+                <button class="btn btn-danger btn-lg" (click)="stopAnalysis()">Stop</button>
+            </div>
+        </div>
+    </div>
+    <app-customloader *ngIf="!dataFlowing && startAnalysis"></app-customloader>
+    <div class="divider"></div>
+    <div class="row" *ngIf="dataFlowing">
+        <div class="col-md-4 col-md-4">
+            <div class="card borderedCard">
+            <canvas
+                    baseChart
+                    [data]="chartData"
+                    [labels]="chartLabels"
+                    [options]="chartOptions"
+                    [chartType]="chartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <div class="card borderedCard">
+                <img class="card-img-top" src="../../assets/img/twitter-icon.png" alt="Card image cap">
+                <div class="card-block tweetCountBlock">
+                    <div class="card-title"><h2> Tweet Count </h2></div>
+                    <h1 class="tweetCount"> {{tweetCount}} </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <div class="card borderedCard">
+                <div class="card-block">
+                    <h1> ? </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 

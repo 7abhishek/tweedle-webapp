@@ -4,6 +4,29 @@
 }
 
 canvas {
-    width: 700px;
-    height: 800px;
+    width: 550px;
+    height: 450px;
+}
+
+.tweedleCenter{
+    text-align: center;
+}
+
+.tweetCountBlock{
+    padding: 10%;
+}
+
+.tweetCount{
+    font-size:75px;
+}
+
+.borderedCard{
+    border: 1px solid lightcyan;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.divider{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
