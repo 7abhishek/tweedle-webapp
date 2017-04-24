@@ -1,41 +1,134 @@
 <div class="container About">
 <div id="impress">
-  <div class="step box" data-x="0" data-y="0">
+  
+  <div class="step box" data-x="0" data-y="0" data-z="-150">
       <h1>Tweedle</h1>
-      <h3>Real time Analysis and Notification System</h3>
-      <p>
-        <small>Created by <a href="https://github.com/AishwaryaPSU">Aishwarya GM</a> / <a href="https://www.facebook.com/Aishwarya.G.M">Aishwarya</a></small>
-      </p>
-    </div>
-  <div class="step box" data-x="0" data-y="1000">
-    <h1>what is it ?</h1>
+      
+      <h3>Real Time Analysis and Notification System</h3>
+      <body>
+          Aishwarya GM
+             COMP512
+      </body>
+      <!--p>
+        <small>Created by <a style="color:#FF0000" href="https://github.com/AishwaryaPSU">Infinity</a> </small>
+      </p-->
+    
+  </div>
+ 
+  <div class="step box " data-x="450" data-y="0" data-z="-600" data-rotate-y="90" >
+    <h1>Assumptions</h1>
       <ul>
-          <li> Real time system</li>
-          <li> analysis engine</li>
-          <li> notification engine</li>
+          <li> Twitter Streaming API Service supplies the tweets in Real Time</li>
+          <li> Ideal network conditions </li>
+          <li> push notification service delivers notification in real time</li>                    
       </ul>
   </div>
-    <div class="step box" data-x="1000" data-y="1000">
-        <h1>how does it work ?</h1>
-        <p>magic!</p>
-    </div>
-    <div id="title" class="step" data-x="2500" data-y="2500" data-scale="4">
-        <span class="try">then you should try me &hearts; </span>
-        <h1>Megustas<sup> he he</sup></h1>
-        <span class="footnote"><sup>*</sup> no pun intended</span>
-    </div>
-    <div class="step box" data-x="6500" data-y="2500" data-rotate="90" data-scale="2">
-        <div class="container">
-            <h1> How i reacted to annoying bugs </h1>
-            <img src="../../assets/gifs/YxqTWRq.gif"/>
-        </div>
-    </div>
-    <div id="big" class="step" data-x="7500" data-y="5500" data-rotate="180" data-scale="4">
-        <p>Here comes the <b> Kafka </b> <p>and <b> Apache Storm </b> for the Rescue </p>
+
+    <div class="step box" data-x="0" data-y="0" data-z="-1050" data-rotate-y="180">
+    <h1>Components</h1>
+      <ul>
+          <li> Open Source Libraries - Apache Kafka, Apache Storm, HBC client </li>
+          <li> Data Source - Twitter, Twitter Streaming API </li>
+          <li> Backend Service - Play Framework </li>
+          <li> Third Party Host Providers - Linode Servers </li>                    
+      </ul>
+  </div>
+
+    <div class="step box" data-x="-450" data-y="0" data-z="-600" data-rotate-y="270">
+       
+            <h1> Overall Picture </h1>
+            <img src="../../../assets/img/Tweedle-final.jpg"/>
+       
     </div>
 
-    <div class="step" data-x="7500" data-y="2325" data-z="-3000" data-scale="1">
-        <h1>and <b> here we go... </b></h1>
+<div class="step box" data-x="2000" data-y="2000" data-z="-2150">
+      <h1>Tweedle</h1>
+      
+      <h3>Real Time Analysis and Notification System</h3>
+      <body>
+          Aishwarya GM
+             COMP512
+      </body>
+      <!--p>
+        <small>Created by <a style="color:#FF0000" href="https://github.com/AishwaryaPSU">Infinity</a> </small>
+      </p-->
+    
+  </div>
+ 
+  <div class="step box " data-x="2450" data-y="2000" data-z="-2600" data-rotate-y="90" >
+    <h1>Assumptions</h1>
+      <ul>
+          <li> Twitter Streaming API Service supplies the tweets in Real Time</li>
+          <li> Ideal network conditions </li>
+          <li> push notification service delivers notification in real time</li>                    
+      </ul>
+  </div>
+
+    <div class="step box" data-x="2000" data-y="2000" data-z="-3050" data-rotate-y="180">
+    <h1>Components</h1>
+      <ul>
+          <li> Open Source Libraries - Apache Kafka, Apache Storm, HBC client </li>
+          <li> Data Source - Twitter, Twitter Streaming API </li>
+          <li> Backend Service - Play Framework </li>
+          <li> Third Party Host Providers - Linode Servers </li>                    
+      </ul>
+  </div>
+
+    <div class="step box" data-x="1550" data-y="2000" data-z="-2600" data-rotate-y="270">
+       
+            <h1> Overall Picture </h1>
+            <img src="../../../assets/img/Tweedle-final.jpg"/>
+       
+    </div>
+
+  
+  
+  
+  
+  
+  
+  <div class="step box" data-x="8000" data-y="-4000">
+        <h1>Scalability</h1>
+        <ul>
+            <li>Data Scource can be replaced according to the requirement</li>
+            <li>Producers and Consumers can be added to Kafka</li>
+        </ul>
+        <p></p>
+ </div>
+
+  
+    <div id="title" class="step" data-x="-5000" data-y="-5000" data-scale="4">
+        <span class="try"> </span>
+        <h1><sup> </sup></h1>
+        <span class="footnote"><sup>*</sup> Drawbacks</span>
+    </div>
+  <div class="step box" data-x="2000" data-y="2000">
+        <h1></h1>
+        <ul>
+            <li>Play crashes - Single point failure</li>
+            <li>Storm crashes - data streams can be lost</li>
+        </ul>
+        <p></p>
+ </div>  
+  
+    
+      <div class="step" data-x="600" data-y="200" data-z="-2000">
+    <h1>Improvizations</h1>
+      <ul>
+          <li> Develop an own machine learning model for sentiment analysis</li>
+          <li> Develop a corresponding Android/iPhone push notification mobile application </li>
+                              
+      </ul>
+  </div>
+    <div id="big" class="step" data-x="-7500" data-y="-5500" data-rotate="180" data-scale="4">
+    
+        <p>Why Kafka ???</p>
+            <li></li>
+    </div>
+
+    
+    <div class="step" data-x="7500" data-y="2325" data-z="-20000">
+        <h1></h1>
     </div>
 </div>
 </div>
