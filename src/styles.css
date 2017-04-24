@@ -7,3 +7,10 @@
 body{
     background-color: rgba(245, 245, 245,1.0);
 }
+
+.fb-like {
+    margin-bottom: 0px;
+    bottom: 0px !important;
+    margin-top: 20%;
+    position: absolute;
+}

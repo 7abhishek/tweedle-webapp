@@ -27,6 +27,7 @@ export class TweedlesComponent implements OnInit {
   newTweedle:string='';
   newTrackTerms:string='';
   newNotify:boolean=false;
+  animation = false;
 
   constructor(private tweedleService:TweedleService, private auth:AuthService) {
 
@@ -37,11 +38,7 @@ export class TweedlesComponent implements OnInit {
     let userId = this.auth.getUserId()!=undefined ? this.auth.getUserId() : this.auth.login();
     console.log("TweedlesComponent userId ", userId);
     this.tweedles = [];
-    this.tweedleService.getTweedles(userId).subscribe((res) => {
-      console.log("res ", res);
-      this.tweedles=res;
-      console.log(this.tweedles);
-    });
+    this.getTweedles(userId);
   }
 
   setTweedle(tweedle){
@@ -59,12 +56,23 @@ export class TweedlesComponent implements OnInit {
     let userId:string = this.auth.getUserId();
     let tweedle:TweedleRequest = new TweedleRequest(userId, this.newTweedle, this.newTrackTerms, this.newNotify);
     console.log("closed ",  tweedle);
-    this.tweedleService.saveTweedle(tweedle).subscribe((data) => console.log("response ", data));
+    this.tweedleService.saveTweedle(tweedle).subscribe((data) => {
+      console.log("response saveTweedle", data);
+      this.getTweedles(userId);
+    });
   }
 
   dismissed() {
     console.log("dismissed ");
     this.output = '(dismissed)';
+  }
+
+  getTweedles(userId){
+      this.tweedleService.getTweedles(userId).subscribe((res) => {
+        console.log("res ", res);
+        this.tweedles=res;
+        console.log(this.tweedles);
+      });
   }
 
   opened() {

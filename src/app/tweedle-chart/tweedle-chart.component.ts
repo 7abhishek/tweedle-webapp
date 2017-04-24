@@ -56,7 +56,7 @@ export class TweedleChartComponent implements OnInit {
     this.tweedleService.startStreamingAndAnalysis(tweedle).subscribe((response) => console.log("start steaming and analysis response", response));
     this.startAnalysis = true;
     console.log("establishing websocket...", tweedle , JSON.stringify(tweedle));
-    var socket = this.tweedleService.fromWebSocket('ws://localhost:9000/test', 'tweedle-protocol', Rx.Subscriber.create(function () {
+    var socket = this.tweedleService.fromWebSocket('ws://74.207.229.25:9000/test', 'tweedle-protocol', Rx.Subscriber.create(function () {
       console.log("socket ", socket, "sending message ", JSON.stringify(tweedle));
       socket.next(JSON.stringify(tweedle));
     }));

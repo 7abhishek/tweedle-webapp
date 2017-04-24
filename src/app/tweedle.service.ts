@@ -11,7 +11,7 @@ export class TweedleService {
   private tweedleUrl:string = "http://74.207.229.25:9000/";
   private currentTweedle:TweedleRequest;
   constructor(private http:Http) {
-    this.url="ws://74.207.229.25:9000/test";
+    this.url="ws://localhost:9000/test";
   }
 
 

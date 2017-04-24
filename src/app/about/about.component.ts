@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html?v=122',
+  templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit, AfterViewInit {
