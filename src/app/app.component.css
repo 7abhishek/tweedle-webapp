@@ -1,3 +1,16 @@
 .appHeading {
     text-align: center;
 }
+
+.center {
+    text-align: center;
+}
+
+.outlet{
+    margin-top: 5%;
+}
+
+.fb-like{
+    border-bottom: 0px;
+    position: fixed;
+}

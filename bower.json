@@ -1,0 +1,17 @@
+{
+  "name": "trial-tweedle",
+  "description": "",
+  "main": "",
+  "authors": [
+    "7abhishek <abhishek@redmart.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/7abhishek/tweedle-webapp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

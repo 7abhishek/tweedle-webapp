@@ -2,3 +2,15 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/bootstrap-social/bootstrap-social.css";
 @import "assets/font-awesome/css/font-awesome.css";
+@import "assets/cyborg-theme.css";
+
+body{
+    background-color: rgba(245, 245, 245,1.0);
+}
+
+.fb-like {
+    margin-bottom: 0px;
+    bottom: 0px !important;
+    margin-top: 20%;
+    position: absolute;
+}
